@@ -1,0 +1,33 @@
+name: Commit Changes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  commit_changes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Git
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your Name"
+
+      - name: Make changes to the code
+        run: |
+          echo "Some new changes" >> file.txt
+          git add .
+
+      - name: Create commit with a dynamic message
+        run: |
+          commit_message="Update $(date +'%Y-%m-%d %H:%M:%S')"
+          git commit -m "$commit_message"
+
+      - name: Push changes
+        run: |
+          git push origin main
