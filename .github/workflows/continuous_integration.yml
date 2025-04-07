@@ -1,0 +1,25 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Lint Python Code
+        uses: advanced-security/python-lint-code-scanning-action@v1.1.2
+        with:
+          linter: pylint
+
+      - name: Build Docker Image (sem push)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          tags: user/simulador:latest

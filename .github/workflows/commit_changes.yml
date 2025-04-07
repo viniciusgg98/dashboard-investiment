@@ -8,7 +8,6 @@ on:
 jobs:
   commit_changes:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -18,16 +17,16 @@ jobs:
           git config --global user.email "your-email@example.com"
           git config --global user.name "Your Name"
 
-      - name: Make changes to the code
+      - name: Fazer alteração de exemplo
         run: |
           echo "Some new changes" >> file.txt
-          git add .
+          git add file.txt
 
-      - name: Create commit with a dynamic message
+      - name: Criar commit com mensagem dinâmica
         run: |
           commit_message="Update $(date +'%Y-%m-%d %H:%M:%S')"
-          git commit -m "$commit_message"
+          git commit -m "$commit_message" || echo "Nada para commitar"
 
-      - name: Push changes
+      - name: Push para o repositório
         run: |
           git push origin main
