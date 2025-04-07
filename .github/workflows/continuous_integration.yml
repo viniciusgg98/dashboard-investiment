@@ -22,4 +22,5 @@ jobs:
         with:
           context: .
           push: false
+          pull: true
           tags: viniciusgg98/simulador:latest
