@@ -56,4 +56,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/simulador:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/simulador:latest
