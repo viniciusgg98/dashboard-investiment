@@ -1,4 +1,4 @@
-#Variaveis iniciais apenas um teste 3
+#Variaveis iniciais apenas um teste 3 tes
 aporte_mensal = float(input("Quanto você vai aportar por mês R$: "))
 anos = int(input("Quantos anos você vai investir: "))
 taxa_de_rendimento_anual = float(input("Qual sua taxa de rendimento anual: "))
