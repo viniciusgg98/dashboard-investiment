@@ -26,8 +26,6 @@ jobs:
           tags: viniciusgg98/simulador:latest
 
 
-
-
   discord:
     runs-on: ubuntu-latest
     steps:
