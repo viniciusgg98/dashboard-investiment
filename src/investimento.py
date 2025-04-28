@@ -1,4 +1,4 @@
-#funçao troq
+#funçao 1.9
 
 def calcular_taxa_mensal(taxa_anual: float) -> float:
     return (taxa_anual / 100) / 12
