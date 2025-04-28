@@ -1,3 +1,5 @@
+#funçao
+
 def calcular_taxa_mensal(taxa_anual: float) -> float:
     return (taxa_anual / 100) / 12
 
